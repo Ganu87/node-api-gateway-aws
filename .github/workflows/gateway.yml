@@ -29,5 +29,4 @@ jobs:
           ssh -i ~/.ssh/ec2_key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} << 'EOF'
             cd /home/${{ secrets.EC2_USERNAME }}/gateway
             npm install
-            pm2 restart myapp || pm2 start order-service/app.js --name myapp
           EOF

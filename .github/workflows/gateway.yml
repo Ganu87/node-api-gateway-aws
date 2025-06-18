@@ -22,7 +22,7 @@ jobs:
 
       - name: Copy files to EC2
         run: |
-          rsync -avz -e "ssh -i ~/.ssh/ec2_key.pem -o StrictHostKeyChecking=no" ./ ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/home/${{ secrets.EC2_USERNAME }}/app
+          rsync -avz -e "ssh -i ~/.ssh/ec2_key.pem -o StrictHostKeyChecking=no" ./ ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/home/${{ secrets.EC2_USERNAME }}/gateway
 
       - name: SSH and deploy
         run: |
